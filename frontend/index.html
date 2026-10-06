@@ -1,0 +1,35 @@
+﻿<!-- Autor: Brooklyn Muñoz -->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="login-page">
+    <main class="login-box">
+        <div class="user-icon">U</div>
+
+        <form id="loginForm">
+            <div class="input-line">
+                <span>Correo</span>
+                <input type="email" id="loginEmail" placeholder="Correo" required>
+            </div>
+
+            <div class="input-line">
+                <span>Contraseña</span>
+                <input type="password" id="loginPassword" placeholder="Contraseña" required>
+            </div>
+
+            <p id="loginError" class="message error"></p>
+
+            <button type="submit" class="main-button">INICIAR SESION</button>
+            <a href="login.html" class="second-button">REGISTRARSE</a>
+        </form>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>

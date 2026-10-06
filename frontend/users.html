@@ -1,0 +1,64 @@
+﻿<!-- Autor: Brooklyn Muñoz -->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="profile-page">
+    <aside class="profile-menu">
+        <div class="avatar-box">
+            <img id="avatarImage" src="" alt="Avatar">
+            <div id="emptyAvatar">Sin avatar</div>
+        </div>
+
+        <button id="loadInfoButton" class="menu-button">Info proyecto</button>
+        <button id="accountButton" class="menu-button active">Datos cuenta</button>
+        <button id="logoutButton" class="menu-button">Salir</button>
+    </aside>
+
+    <main class="profile-content">
+        <section id="accountView">
+            <h1>Perfil</h1>
+
+            <p id="profileMessage" class="profile-message"></p>
+
+            <form id="profileForm">
+                <label for="profileId">ID usuario</label>
+                <input type="text" id="profileId" readonly>
+
+                <label for="profileEmail">Correo</label>
+                <input type="email" id="profileEmail" readonly>
+
+                <label for="profileName">Nombre</label>
+                <input type="text" id="profileName" required>
+
+                <label for="profileCreatedAt">Fecha de creacion</label>
+                <input type="text" id="profileCreatedAt" readonly>
+
+                <button type="submit" class="save-button">Guardar cambios</button>
+            </form>
+
+            <section class="avatar-section">
+                <h2>Cambiar avatar</h2>
+                <input type="file" id="avatarFile">
+                <button id="changeAvatarButton" class="save-button" type="button">Cambiar avatar</button>
+            </section>
+
+            <section class="danger-section">
+                <button id="deleteUserButton" class="delete-button" type="button">Eliminar mi usuario</button>
+            </section>
+        </section>
+
+        <section id="infoView" class="info-view">
+            <h1>Info proyecto</h1>
+            <pre id="fileInfo" class="file-info"></pre>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>

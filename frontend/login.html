@@ -1,0 +1,40 @@
+﻿<!-- Autor: Brooklyn Muñoz -->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="login-page">
+    <main class="login-box">
+        <div class="user-icon">+</div>
+
+        <form id="registerForm">
+            <div class="input-line">
+                <span>Nombre</span>
+                <input type="text" id="registerName" placeholder="Nombre" required>
+            </div>
+
+            <div class="input-line">
+                <span>Correo</span>
+                <input type="email" id="registerEmail" placeholder="Correo" required>
+            </div>
+
+            <div class="input-line">
+                <span>Clave</span>
+                <input type="password" id="registerPassword" placeholder="Contraseña" required>
+            </div>
+
+            <p id="registerMessage" class="message"></p>
+
+            <button type="submit" class="main-button">REGISTRARSE</button>
+            <a href="index.html" class="second-button">VOLVER</a>
+        </form>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>

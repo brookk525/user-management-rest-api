@@ -1,0 +1,265 @@
+﻿/* Autor: Brooklyn Muñoz */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.login-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(51, 118, 255, 0.35), transparent 28%),
+        radial-gradient(circle at 80% 75%, rgba(146, 42, 255, 0.28), transparent 30%),
+        linear-gradient(135deg, #030711, #071a34 45%, #02030a);
+}
+
+.login-box {
+    width: 340px;
+    padding: 36px 32px;
+}
+
+.user-icon {
+    width: 86px;
+    height: 86px;
+    margin: 0 auto 34px;
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 38px;
+    background: rgba(7, 26, 52, 0.65);
+}
+
+.input-line {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.75);
+    margin-bottom: 24px;
+    padding-bottom: 8px;
+}
+
+.input-line input {
+    width: 100%;
+    border: 0;
+    outline: 0;
+    color: white;
+    background: transparent;
+    font-size: 16px;
+}
+
+.input-line input::placeholder {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.main-button,
+.second-button {
+    width: 100%;
+    height: 46px;
+    border: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.main-button {
+    margin-top: 16px;
+    background: #0a74ff;
+}
+
+.second-button {
+    margin-top: 16px;
+    background: rgba(8, 67, 145, 0.72);
+}
+
+.message {
+    min-height: 22px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.error {
+    color: #ff4b63;
+}
+
+.ok {
+    color: #18b66a;
+}
+
+.profile-page {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 270px 1fr;
+    color: white;
+    background:
+        radial-gradient(circle at 18% 18%, rgba(51, 118, 255, 0.30), transparent 28%),
+        radial-gradient(circle at 82% 78%, rgba(146, 42, 255, 0.22), transparent 30%),
+        linear-gradient(135deg, #030711, #071a34 45%, #02030a);
+}
+
+.profile-menu {
+    padding: 32px 16px;
+    border-right: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(3, 7, 17, 0.78);
+}
+
+.avatar-box {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 32px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid rgba(255, 255, 255, 0.18);
+    background: rgba(7, 26, 52, 0.75);
+}
+
+.avatar-box img {
+    width: 100%;
+    height: 100%;
+    display: none;
+    object-fit: cover;
+}
+
+#emptyAvatar {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.menu-button {
+    width: 100%;
+    height: 58px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(7, 26, 52, 0.48);
+    color: white;
+    font-size: 18px;
+    text-align: left;
+    padding-left: 22px;
+    cursor: pointer;
+}
+
+.menu-button.active {
+    color: white;
+    background: #0a74ff;
+}
+
+.profile-content {
+    padding: 56px 72px;
+}
+
+#accountView {
+    max-width: 1100px;
+    padding: 42px;
+    background: rgba(3, 7, 17, 0.44);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.info-view {
+    display: none;
+    min-height: 520px;
+    padding: 48px;
+    color: white;
+    background: rgba(3, 7, 17, 0.44);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.profile-content h1 {
+    margin: 0 0 36px;
+    font-size: 42px;
+}
+
+.profile-content label {
+    display: block;
+    margin: 22px 0 8px;
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.profile-content input {
+    width: 100%;
+    height: 46px;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 4px;
+    padding: 0 14px;
+    font-size: 18px;
+    color: white;
+    background: rgba(7, 26, 52, 0.65);
+}
+
+.profile-content input[readonly] {
+    color: rgba(255, 255, 255, 0.72);
+}
+
+.save-button {
+    margin-top: 24px;
+    min-width: 150px;
+    height: 42px;
+    border: 0;
+    color: white;
+    background: #0b72d9;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.avatar-section,
+.danger-section {
+    margin-top: 34px;
+}
+
+.avatar-section h2 {
+    margin-bottom: 12px;
+}
+
+.delete-button {
+    height: 42px;
+    border: 0;
+    color: white;
+    background: #d9233f;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0 18px;
+}
+
+.profile-message {
+    min-height: 24px;
+    font-weight: bold;
+}
+
+.file-info {
+    margin-top: 28px;
+    min-height: 260px;
+    padding: 28px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background: rgba(7, 26, 52, 0.72);
+    color: white;
+    font-size: 20px;
+    line-height: 1.7;
+    white-space: pre-wrap;
+}
+
+@media (max-width: 760px) {
+    .profile-page {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-content {
+        padding: 32px 22px;
+    }
+}
