@@ -1,0 +1,8 @@
+Proyecto final de programacion
+
+Alumno: Brooklyn Muñoz Acevedo
+Ciclo: DAW
+
+Esta aplicacion es un gestor sencillo de usuarios. Permite registrarse, iniciar sesion,
+consultar el perfil, actualizar los datos, cambiar el avatar y eliminar el usuario.
+
