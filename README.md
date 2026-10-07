@@ -54,11 +54,30 @@ El backend está organizado en capas para separar responsabilidades:
 .
 ├── backend
 │   ├── adapters
+│   │   ├── implementations
+│   │   │   ├── supabase_s3_adapter.py
+│   │   │   ├── user_no_orm_adapter.py
+│   │   │   └── user_orm_adapter.py
+│   │   └── interfaces
+│   │       ├── storage_adapter.py
+│   │       └── user_adapter.py
 │   ├── controllers
+│   │   ├── auth_controller.py
+│   │   ├── file_controller.py
+│   │   ├── storage_controller.py
+│   │   └── user_controller.py
+│   ├── services
+│   │   ├── implementations
+│   │   │   ├── auth_service_impl.py
+│   │   │   ├── storage_service_impl.py
+│   │   │   └── user_service_impl.py
+│   │   └── interfaces
+│   │       ├── auth_service.py
+│   │       ├── storage_service.py
+│   │       └── user_service.py
+│   ├── models
 │   ├── data
 │   ├── database
-│   ├── models
-│   ├── services
 │   ├── app.py
 │   └── main.py
 ├── frontend
@@ -67,7 +86,19 @@ El backend está organizado en capas para separar responsabilidades:
 │   ├── login.html
 │   ├── style.css
 │   └── users.html
+├── tests
+│   ├── conftest.py
+│   ├── test_auth_service.py
+│   ├── test_storage_adapter.py
+│   ├── test_user_controller.py
+│   ├── test_user_no_orm_adapter.py
+│   └── test_user_service.py
+├── docs
+│   └── images
 ├── .env.example
+├── .gitignore
+├── README.md
+├── requirements-dev.txt
 └── requirements.txt
 ```
 
