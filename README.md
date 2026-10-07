@@ -8,7 +8,7 @@ La aplicación combina un frontend en HTML, CSS y JavaScript con una API REST cr
 
 - Registro e inicio de sesión con Supabase Auth.
 - Validación de sesiones mediante tokens Bearer.
-- Creación, consulta, actualización y eliminación de usuarios.
+- Operaciones CRUD sobre perfiles almacenados en SQLite.
 - Persistencia de datos con SQLite.
 - Implementaciones de acceso a datos con `sqlite3` y SQLAlchemy.
 - Subida de avatares a Supabase Storage mediante su interfaz compatible con S3.
@@ -49,6 +49,8 @@ El backend está organizado en capas para separar responsabilidades:
 - `services`: reglas y lógica de la aplicación.
 - `adapters`: acceso a SQLite, SQLAlchemy y Supabase Storage.
 - `models`: modelos de entrada, respuesta y dominio.
+
+Gracias a la interfaz `UserAdapter`, la capa de servicio puede utilizar tanto la implementación directa con `sqlite3` como la implementación con SQLAlchemy. Para cambiar entre ambas basta con sustituir el adaptador configurado en `UserServiceImpl`, sin modificar los controladores ni la lógica de negocio.
 
 ```text
 .
@@ -201,7 +203,7 @@ Los casos de prueba fueron seleccionados por el autor según los comportamientos
 | `GET` | `/user_info?id={id}` | Consulta un usuario mediante query parameter |
 | `GET` | `/list_users` | Lista los identificadores de usuario |
 | `PUT` | `/update_user` | Actualiza el nombre del usuario autenticado |
-| `DELETE` | `/delete_user?id={id}` | Elimina el perfil y el usuario autenticado |
+| `DELETE` | `/delete_user?id={id}` | Elimina el perfil público de Supabase y el registro local del usuario autenticado |
 | `POST` | `/storage/avatar` | Sube y actualiza el avatar |
 | `GET` | `/files/info` | Lee la información del proyecto |
 
