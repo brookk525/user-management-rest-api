@@ -222,6 +222,10 @@ El backend, la arquitectura de la aplicación y la integración con SQLite y Sup
 
 Para implementar parte de la interfaz y del código JavaScript se utilizaron herramientas de inteligencia artificial como apoyo, siguiendo los requisitos y el funcionamiento definidos por el autor. El resultado fue posteriormente revisado e integrado con el backend.
 
+## Licencia
+
+Este proyecto se distribuye bajo la licencia MIT. Consulta el archivo [LICENSE](LICENSE) para obtener más información.
+
 ## Autor
 
 Brooklyn Muñoz Acevedo
