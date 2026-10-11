@@ -1,4 +1,4 @@
-# API REST de gestión de usuarios
+# 👥 API REST de gestión de usuarios
 
 [English](README.md) | Español
 
@@ -6,7 +6,7 @@ Proyecto final de Programación desarrollado durante el primer curso de Desarrol
 
 La aplicación combina un frontend en HTML, CSS y JavaScript con una API REST creada con FastAPI. Incluye autenticación mediante Supabase, persistencia local con SQLite y gestión de avatares con Supabase Storage.
 
-## Funcionalidades
+## ✨ Funcionalidades
 
 - Registro e inicio de sesión con Supabase Auth.
 - Validación de sesiones mediante tokens Bearer.
@@ -17,24 +17,24 @@ La aplicación combina un frontend en HTML, CSS y JavaScript con una API REST cr
 - Lectura de información desde un archivo del servidor.
 - Interfaz web para gestionar el perfil del usuario.
 
-## Capturas
+## 📸 Capturas
 
-### Acceso y registro
+### 🔐 Acceso y registro
 
 <p align="center">
   <img src="docs/images/login.png" alt="Pantalla de inicio de sesión" width="45%">
   <img src="docs/images/register.png" alt="Pantalla de registro" width="45%">
 </p>
 
-### Perfil de usuario
+### 👤 Perfil de usuario
 
 ![Perfil de usuario](docs/images/profile.png)
 
-### Documentación de la API
+### 📚 Documentación de la API
 
 ![Documentación interactiva de FastAPI](docs/images/api-documentation.png)
 
-## Tecnologías
+## 🛠️ Tecnologías
 
 - Python 3.10+
 - FastAPI y Uvicorn
@@ -43,7 +43,7 @@ La aplicación combina un frontend en HTML, CSS y JavaScript con una API REST cr
 - Boto3
 - HTML5, CSS3 y JavaScript
 
-## Arquitectura
+## 🏗️ Arquitectura
 
 El backend está organizado en capas para separar responsabilidades:
 
@@ -108,9 +108,9 @@ Gracias a la interfaz `UserAdapter`, la capa de servicio puede utilizar tanto la
 └── requirements.txt
 ```
 
-## Puesta en marcha
+## 🚀 Puesta en marcha
 
-### 1. Crear y activar un entorno virtual
+### 1. 🧪 Crear y activar un entorno virtual
 
 ```bash
 python -m venv .venv
@@ -123,13 +123,13 @@ En Windows:
 .venv\Scripts\activate
 ```
 
-### 2. Instalar las dependencias
+### 2. 📦 Instalar las dependencias
 
 ```bash
 python -m pip install -r requirements.txt
 ```
 
-### 3. Configurar Supabase
+### 3. ⚙️ Configurar Supabase
 
 Copia `.env.example` como `.env` y completa las variables con los datos de tu propio proyecto de Supabase:
 
@@ -151,7 +151,7 @@ El proyecto espera autenticación por correo y contraseña, un bucket público p
 
 > El archivo `.env` contiene credenciales y está excluido del repositorio.
 
-### 4. Ejecutar el backend
+### 4. ⚡ Ejecutar el backend
 
 ```bash
 cd backend
@@ -162,7 +162,7 @@ La API quedará disponible en `http://127.0.0.1:8000` y su documentación intera
 
 La base de datos `backend/database/database.db` se crea automáticamente al utilizar por primera vez un endpoint de usuarios.
 
-### 5. Ejecutar el frontend
+### 5. 🌐 Ejecutar el frontend
 
 Desde la raíz del proyecto, en otra terminal:
 
@@ -172,7 +172,7 @@ python -m http.server 5500 --directory frontend
 
 Abre `http://127.0.0.1:5500` en el navegador.
 
-## Tests
+## ✅ Tests
 
 Las pruebas del adaptador SQLite utilizan una base de datos temporal independiente y no modifican los datos de la aplicación.
 
@@ -196,7 +196,7 @@ Las pruebas de Supabase y S3 no realizan peticiones a Internet ni necesitan cred
 
 Los casos de prueba fueron seleccionados por el autor según los comportamientos que consideró necesario validar. Su implementación se realizó con apoyo de herramientas de inteligencia artificial y los resultados fueron revisados antes de incorporarlos al proyecto.
 
-## Endpoints principales
+## 🔌 Endpoints principales
 
 | Método | Endpoint | Descripción |
 | --- | --- | --- |
@@ -211,7 +211,7 @@ Los casos de prueba fueron seleccionados por el autor según los comportamientos
 | `POST` | `/storage/avatar` | Sube y actualiza el avatar |
 | `GET` | `/files/info` | Lee la información del proyecto |
 
-## Seguridad
+## 🔒 Seguridad
 
 - Las contraseñas se gestionan mediante Supabase Auth y no se almacenan en SQLite.
 - Las credenciales se cargan desde variables de entorno.
@@ -220,16 +220,16 @@ Los casos de prueba fueron seleccionados por el autor según los comportamientos
 - El archivo `.env`, las bases de datos locales y los archivos temporales están excluidos mediante `.gitignore`.
 - El repositorio no contiene usuarios, correos ni credenciales reales.
 
-## Proceso de desarrollo
+## 🧠 Proceso de desarrollo
 
 El backend, la arquitectura de la aplicación y la integración con SQLite y Supabase fueron desarrollados por el autor.
 
 Para implementar parte de la interfaz y del código JavaScript se utilizaron herramientas de inteligencia artificial como apoyo, siguiendo los requisitos y el funcionamiento definidos por el autor. El resultado fue posteriormente revisado e integrado con el backend.
 
-## Licencia
+## 📄 Licencia
 
 Este proyecto se distribuye bajo la licencia MIT. Consulta el archivo [LICENSE](LICENSE) para obtener más información.
 
-## Autor
+## 👤 Autor
 
 Brooklyn Muñoz Acevedo

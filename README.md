@@ -1,4 +1,4 @@
-# User Management REST API
+# 👥 User Management REST API
 
 English | [Español](README.es.md)
 
@@ -6,7 +6,7 @@ Final project for the Programming module, developed during the first year of the
 
 The application combines an HTML, CSS, and JavaScript frontend with a REST API built with FastAPI. It includes authentication through Supabase, local persistence with SQLite, and avatar management with Supabase Storage.
 
-## Features
+## ✨ Features
 
 - Registration and login with Supabase Auth.
 - Session validation using Bearer tokens.
@@ -17,24 +17,24 @@ The application combines an HTML, CSS, and JavaScript frontend with a REST API b
 - Reading information from a server file.
 - Web interface for managing the user profile.
 
-## Screenshots
+## 📸 Screenshots
 
-### Login and registration
+### 🔐 Login and registration
 
 <p align="center">
   <img src="docs/images/login.png" alt="Login screen" width="45%">
   <img src="docs/images/register.png" alt="Registration screen" width="45%">
 </p>
 
-### User profile
+### 👤 User profile
 
 ![User profile](docs/images/profile.png)
 
-### API documentation
+### 📚 API documentation
 
 ![FastAPI interactive documentation](docs/images/api-documentation.png)
 
-## Technologies
+## 🛠️ Technologies
 
 - Python 3.10+
 - FastAPI and Uvicorn
@@ -43,7 +43,7 @@ The application combines an HTML, CSS, and JavaScript frontend with a REST API b
 - Boto3
 - HTML5, CSS3, and JavaScript
 
-## Architecture
+## 🏗️ Architecture
 
 The backend is organized into layers to separate responsibilities:
 
@@ -108,9 +108,9 @@ Through the `UserAdapter` interface, the service layer can use either the direct
 └── requirements.txt
 ```
 
-## Getting started
+## 🚀 Getting started
 
-### 1. Create and activate a virtual environment
+### 1. 🧪 Create and activate a virtual environment
 
 ```bash
 python -m venv .venv
@@ -123,13 +123,13 @@ On Windows:
 .venv\Scripts\activate
 ```
 
-### 2. Install dependencies
+### 2. 📦 Install dependencies
 
 ```bash
 python -m pip install -r requirements.txt
 ```
 
-### 3. Configure Supabase
+### 3. ⚙️ Configure Supabase
 
 Copy `.env.example` as `.env` and complete the variables with the details from your own Supabase project:
 
@@ -151,7 +151,7 @@ The project expects email and password authentication, a public bucket for avata
 
 > The `.env` file contains credentials and is excluded from the repository.
 
-### 4. Run the backend
+### 4. ⚡ Run the backend
 
 ```bash
 cd backend
@@ -162,7 +162,7 @@ The API will be available at `http://127.0.0.1:8000`, with its interactive docum
 
 The `backend/database/database.db` database is created automatically when a user endpoint is used for the first time.
 
-### 5. Run the frontend
+### 5. 🌐 Run the frontend
 
 From the project root, in another terminal:
 
@@ -172,7 +172,7 @@ python -m http.server 5500 --directory frontend
 
 Open `http://127.0.0.1:5500` in your browser.
 
-## Tests
+## ✅ Tests
 
 The SQLite adapter tests use a separate temporary database and do not modify the application's data.
 
@@ -196,7 +196,7 @@ The Supabase and S3 tests do not make Internet requests or require real credenti
 
 The author selected the test cases based on the behaviors considered necessary to validate. They were implemented with the support of artificial intelligence tools, and the results were reviewed before being added to the project.
 
-## Main endpoints
+## 🔌 Main endpoints
 
 | Method | Endpoint | Description |
 | --- | --- | --- |
@@ -211,7 +211,7 @@ The author selected the test cases based on the behaviors considered necessary t
 | `POST` | `/storage/avatar` | Uploads and updates the avatar |
 | `GET` | `/files/info` | Reads the project information |
 
-## Security
+## 🔒 Security
 
 - Passwords are managed through Supabase Auth and are not stored in SQLite.
 - Credentials are loaded from environment variables.
@@ -220,16 +220,16 @@ The author selected the test cases based on the behaviors considered necessary t
 - The `.env` file, local databases, and temporary files are excluded through `.gitignore`.
 - The repository does not contain real users, email addresses, or credentials.
 
-## Development process
+## 🧠 Development process
 
 The backend, application architecture, and SQLite and Supabase integration were developed by the author.
 
 Artificial intelligence tools supported the implementation of part of the interface and JavaScript code, following the requirements and behavior defined by the author. The result was later reviewed and integrated with the backend.
 
-## License
+## 📄 License
 
 This project is distributed under the MIT License. See the [LICENSE](LICENSE) file for more information.
 
-## Author
+## 👤 Author
 
 Brooklyn Muñoz Acevedo
