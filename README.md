@@ -1,56 +1,58 @@
-# API REST de gestión de usuarios
+# User Management REST API
 
-Proyecto final de Programación desarrollado durante el primer curso de Desarrollo de Aplicaciones Web (DAW).
+English | [Español](README.es.md)
 
-La aplicación combina un frontend en HTML, CSS y JavaScript con una API REST creada con FastAPI. Incluye autenticación mediante Supabase, persistencia local con SQLite y gestión de avatares con Supabase Storage.
+Final project for the Programming module, developed during the first year of the Web Application Development program (Desarrollo de Aplicaciones Web, DAW).
 
-## Funcionalidades
+The application combines an HTML, CSS, and JavaScript frontend with a REST API built with FastAPI. It includes authentication through Supabase, local persistence with SQLite, and avatar management with Supabase Storage.
 
-- Registro e inicio de sesión con Supabase Auth.
-- Validación de sesiones mediante tokens Bearer.
-- Operaciones CRUD sobre perfiles almacenados en SQLite.
-- Persistencia de datos con SQLite.
-- Implementaciones de acceso a datos con `sqlite3` y SQLAlchemy.
-- Subida de avatares a Supabase Storage mediante su interfaz compatible con S3.
-- Lectura de información desde un archivo del servidor.
-- Interfaz web para gestionar el perfil del usuario.
+## Features
 
-## Capturas
+- Registration and login with Supabase Auth.
+- Session validation using Bearer tokens.
+- CRUD operations on profiles stored in SQLite.
+- Data persistence with SQLite.
+- Data access implementations using `sqlite3` and SQLAlchemy.
+- Avatar uploads to Supabase Storage through its S3-compatible interface.
+- Reading information from a server file.
+- Web interface for managing the user profile.
 
-### Acceso y registro
+## Screenshots
+
+### Login and registration
 
 <p align="center">
-  <img src="docs/images/login.png" alt="Pantalla de inicio de sesión" width="45%">
-  <img src="docs/images/register.png" alt="Pantalla de registro" width="45%">
+  <img src="docs/images/login.png" alt="Login screen" width="45%">
+  <img src="docs/images/register.png" alt="Registration screen" width="45%">
 </p>
 
-### Perfil de usuario
+### User profile
 
-![Perfil de usuario](docs/images/profile.png)
+![User profile](docs/images/profile.png)
 
-### Documentación de la API
+### API documentation
 
-![Documentación interactiva de FastAPI](docs/images/api-documentation.png)
+![FastAPI interactive documentation](docs/images/api-documentation.png)
 
-## Tecnologías
+## Technologies
 
 - Python 3.10+
-- FastAPI y Uvicorn
-- SQLite y SQLAlchemy
-- Supabase Auth y Supabase Storage
+- FastAPI and Uvicorn
+- SQLite and SQLAlchemy
+- Supabase Auth and Supabase Storage
 - Boto3
-- HTML5, CSS3 y JavaScript
+- HTML5, CSS3, and JavaScript
 
-## Arquitectura
+## Architecture
 
-El backend está organizado en capas para separar responsabilidades:
+The backend is organized into layers to separate responsibilities:
 
-- `controllers`: endpoints y gestión de las peticiones HTTP.
-- `services`: reglas y lógica de la aplicación.
-- `adapters`: acceso a SQLite, SQLAlchemy y Supabase Storage.
-- `models`: modelos de entrada, respuesta y dominio.
+- `controllers`: endpoints and HTTP request handling.
+- `services`: application rules and logic.
+- `adapters`: access to SQLite, SQLAlchemy, and Supabase Storage.
+- `models`: input, response, and domain models.
 
-Gracias a la interfaz `UserAdapter`, la capa de servicio puede utilizar tanto la implementación directa con `sqlite3` como la implementación con SQLAlchemy. Para cambiar entre ambas basta con sustituir el adaptador configurado en `UserServiceImpl`, sin modificar los controladores ni la lógica de negocio.
+Through the `UserAdapter` interface, the service layer can use either the direct `sqlite3` implementation or the SQLAlchemy implementation. Switching between them only requires replacing the adapter configured in `UserServiceImpl`, without modifying the controllers or business logic.
 
 ```text
 .
@@ -99,35 +101,37 @@ Gracias a la interfaz `UserAdapter`, la capa de servicio puede utilizar tanto la
 │   └── images
 ├── .env.example
 ├── .gitignore
+├── LICENSE
+├── README.es.md
 ├── README.md
 ├── requirements-dev.txt
 └── requirements.txt
 ```
 
-## Puesta en marcha
+## Getting started
 
-### 1. Crear y activar un entorno virtual
+### 1. Create and activate a virtual environment
 
 ```bash
 python -m venv .venv
 source .venv/bin/activate
 ```
 
-En Windows:
+On Windows:
 
 ```powershell
 .venv\Scripts\activate
 ```
 
-### 2. Instalar las dependencias
+### 2. Install dependencies
 
 ```bash
 python -m pip install -r requirements.txt
 ```
 
-### 3. Configurar Supabase
+### 3. Configure Supabase
 
-Copia `.env.example` como `.env` y completa las variables con los datos de tu propio proyecto de Supabase:
+Copy `.env.example` as `.env` and complete the variables with the details from your own Supabase project:
 
 ```bash
 cp .env.example .env
@@ -143,89 +147,89 @@ SUPABASE_S3_SECRET_KEY=
 SUPABASE_S3_BUCKET=
 ```
 
-El proyecto espera autenticación por correo y contraseña, un bucket público para los avatares y una tabla pública `profiles` asociada a los usuarios de Supabase Auth.
+The project expects email and password authentication, a public bucket for avatars, and a public `profiles` table associated with Supabase Auth users.
 
-> El archivo `.env` contiene credenciales y está excluido del repositorio.
+> The `.env` file contains credentials and is excluded from the repository.
 
-### 4. Ejecutar el backend
+### 4. Run the backend
 
 ```bash
 cd backend
 uvicorn main:app --reload
 ```
 
-La API quedará disponible en `http://127.0.0.1:8000` y su documentación interactiva en `http://127.0.0.1:8000/docs`.
+The API will be available at `http://127.0.0.1:8000`, with its interactive documentation at `http://127.0.0.1:8000/docs`.
 
-La base de datos `backend/database/database.db` se crea automáticamente al utilizar por primera vez un endpoint de usuarios.
+The `backend/database/database.db` database is created automatically when a user endpoint is used for the first time.
 
-### 5. Ejecutar el frontend
+### 5. Run the frontend
 
-Desde la raíz del proyecto, en otra terminal:
+From the project root, in another terminal:
 
 ```bash
 python -m http.server 5500 --directory frontend
 ```
 
-Abre `http://127.0.0.1:5500` en el navegador.
+Open `http://127.0.0.1:5500` in your browser.
 
 ## Tests
 
-Las pruebas del adaptador SQLite utilizan una base de datos temporal independiente y no modifican los datos de la aplicación.
+The SQLite adapter tests use a separate temporary database and do not modify the application's data.
 
-Instala las dependencias de desarrollo y ejecuta la suite con:
+Install the development dependencies and run the test suite with:
 
 ```bash
 python -m pip install -r requirements.txt -r requirements-dev.txt
 pytest -q
 ```
 
-La suite contiene 30 tests y comprueba:
+The suite contains 30 tests and checks:
 
-- Creación de la tabla y operaciones CRUD con una SQLite temporal.
-- Independencia entre registros y listado de usuarios.
-- Validaciones de la capa de servicio.
-- Autenticación y autorización, incluidos los códigos `401`, `403` y `404`.
-- Login con Supabase Auth mediante una respuesta simulada.
-- Subida de avatares mediante un cliente S3 simulado.
+- Table creation and CRUD operations using a temporary SQLite database.
+- Independence between records and user listing.
+- Service layer validations.
+- Authentication and authorization, including `401`, `403`, and `404` status codes.
+- Login with Supabase Auth using a mocked response.
+- Avatar uploads using a mocked S3 client.
 
-Las pruebas de Supabase y S3 no realizan peticiones a Internet ni necesitan credenciales reales.
+The Supabase and S3 tests do not make Internet requests or require real credentials.
 
-Los casos de prueba fueron seleccionados por el autor según los comportamientos que consideró necesario validar. Su implementación se realizó con apoyo de herramientas de inteligencia artificial y los resultados fueron revisados antes de incorporarlos al proyecto.
+The author selected the test cases based on the behaviors considered necessary to validate. They were implemented with the support of artificial intelligence tools, and the results were reviewed before being added to the project.
 
-## Endpoints principales
+## Main endpoints
 
-| Método | Endpoint | Descripción |
+| Method | Endpoint | Description |
 | --- | --- | --- |
-| `POST` | `/auth/register` | Registra un usuario |
-| `POST` | `/auth/login` | Inicia sesión y devuelve un token |
-| `POST` | `/users` | Crea un usuario local |
-| `GET` | `/users/{id}` | Consulta un usuario |
-| `GET` | `/user_info?id={id}` | Consulta un usuario mediante query parameter |
-| `GET` | `/list_users` | Lista los identificadores de usuario |
-| `PUT` | `/update_user` | Actualiza el nombre del usuario autenticado |
-| `DELETE` | `/delete_user?id={id}` | Elimina el perfil público de Supabase y el registro local del usuario autenticado |
-| `POST` | `/storage/avatar` | Sube y actualiza el avatar |
-| `GET` | `/files/info` | Lee la información del proyecto |
+| `POST` | `/auth/register` | Registers a user |
+| `POST` | `/auth/login` | Logs in and returns a token |
+| `POST` | `/users` | Creates a local user |
+| `GET` | `/users/{id}` | Retrieves a user |
+| `GET` | `/user_info?id={id}` | Retrieves a user through a query parameter |
+| `GET` | `/list_users` | Lists user identifiers |
+| `PUT` | `/update_user` | Updates the authenticated user's name |
+| `DELETE` | `/delete_user?id={id}` | Deletes the authenticated user's public Supabase profile and local record |
+| `POST` | `/storage/avatar` | Uploads and updates the avatar |
+| `GET` | `/files/info` | Reads the project information |
 
-## Seguridad
+## Security
 
-- Las contraseñas se gestionan mediante Supabase Auth y no se almacenan en SQLite.
-- Las credenciales se cargan desde variables de entorno.
-- Las operaciones de modificación y eliminación comprueban que el token pertenezca al propietario del usuario.
-- El correo se considera parte de la identidad gestionada por Supabase Auth y no se modifica desde el perfil local.
-- El archivo `.env`, las bases de datos locales y los archivos temporales están excluidos mediante `.gitignore`.
-- El repositorio no contiene usuarios, correos ni credenciales reales.
+- Passwords are managed through Supabase Auth and are not stored in SQLite.
+- Credentials are loaded from environment variables.
+- Update and delete operations verify that the token belongs to the owner of the user record.
+- The email address is considered part of the identity managed by Supabase Auth and is not modified through the local profile.
+- The `.env` file, local databases, and temporary files are excluded through `.gitignore`.
+- The repository does not contain real users, email addresses, or credentials.
 
-## Proceso de desarrollo
+## Development process
 
-El backend, la arquitectura de la aplicación y la integración con SQLite y Supabase fueron desarrollados por el autor.
+The backend, application architecture, and SQLite and Supabase integration were developed by the author.
 
-Para implementar parte de la interfaz y del código JavaScript se utilizaron herramientas de inteligencia artificial como apoyo, siguiendo los requisitos y el funcionamiento definidos por el autor. El resultado fue posteriormente revisado e integrado con el backend.
+Artificial intelligence tools supported the implementation of part of the interface and JavaScript code, following the requirements and behavior defined by the author. The result was later reviewed and integrated with the backend.
 
-## Licencia
+## License
 
-Este proyecto se distribuye bajo la licencia MIT. Consulta el archivo [LICENSE](LICENSE) para obtener más información.
+This project is distributed under the MIT License. See the [LICENSE](LICENSE) file for more information.
 
-## Autor
+## Author
 
 Brooklyn Muñoz Acevedo
